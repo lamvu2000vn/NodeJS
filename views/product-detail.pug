@@ -1,0 +1,15 @@
+extends layouts/main-layout.pug
+
+block content
+    .row.mt-5
+        .col-4.mx-auto
+            .mb-3.form-floating
+                .mb-3.form-floating
+                    input.form-control(type="text" id="name" name="name" placeholder="Enter product name" value=product.name)
+                    label(for="name") Product name
+                .mb-3.form-floating
+                    input.form-control(type="text" id="description" name="description" placeholder="Enter description" value=product.description)
+                    label(for="description") Description
+                .mb-3.form-floating
+                    input.form-control(type="number" id="price" name="price" min="0" max="100" placeholder="Enter price" value=product.price)
+                    label(for="price") Price
