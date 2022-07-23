@@ -1,123 +1,20 @@
 :root {
-<<<<<<< Updated upstream
-    --primary: #1c077c;
-=======
     --primary: rgb(214, 45, 45);
->>>>>>> Stashed changes
     --text: #333;
 }
 
 * {
-<<<<<<< Updated upstream
-    padding: 0;
-    margin: 0;
-=======
     margin: 0;
     padding: 0;
->>>>>>> Stashed changes
 }
 
 a,
 a:hover,
 a:visited {
     text-decoration: none !important;
-<<<<<<< Updated upstream
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: var(--text);
 }
-
-/* ================ Start Header ================= */
-
-.header {
-    position: relative;
-    left: 0;
-    top: 0;
-    right: 0;
-    z-index: 100;
-    width: 100%;
-    height: 60px;
-    background-color: var(--primary);
-}
-
-.header__container {
-    width: 100%;
-    height: 100%;
-    padding-inline: 24px;
-    display: flex;
-    align-items: stretch;
-    justify-content: space-between;
-}
-
-.header__item {
-    display: flex;
-    align-items: stretch;
-}
-
-.header__link {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 0 12px;
-    font-size: 18px;
-    color: #fff;
-}
-
-.header__link:hover,
-.header__link.active {
-    background-color: #fff;
-    color: var(--primary);
-}
-
-.header__username {
-    position: relative;
-    cursor: pointer;
-    font-size: 18px;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.header__username:hover .header__account-options {
-    display: block;
-}
-
-.header__account-options {
-    position: absolute;
-    right: 0;
-    top: 100%;
-    margin-top: -10px;
-    display: none;
-    width: max-content;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
-    padding: 12px;
-}
-
-.account-options__item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 12px;
-    border-radius: 8px;
-    color: var(--text);
-}
-
-.account-options__item:hover {
-    background-color: var(--primary);
-    color: #fff;
-}
-
-/* ================ End Header =--================ */
-=======
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: var(--text);
-}
->>>>>>> Stashed changes
