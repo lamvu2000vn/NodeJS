@@ -1,17 +1,27 @@
 :root {
+<<<<<<< Updated upstream
     --primary: #1c077c;
+=======
+    --primary: rgb(214, 45, 45);
+>>>>>>> Stashed changes
     --text: #333;
 }
 
 * {
+<<<<<<< Updated upstream
     padding: 0;
     margin: 0;
+=======
+    margin: 0;
+    padding: 0;
+>>>>>>> Stashed changes
 }
 
 a,
 a:hover,
 a:visited {
     text-decoration: none !important;
+<<<<<<< Updated upstream
 }
 
 body {
@@ -103,3 +113,11 @@ body {
 }
 
 /* ================ End Header =--================ */
+=======
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+}
+>>>>>>> Stashed changes

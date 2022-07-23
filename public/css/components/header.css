@@ -1,0 +1,91 @@
+.header {
+    position: relative;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    width: 100%;
+    height: 60px;
+    background-color: var(--primary);
+}
+
+.header__container {
+    width: 100%;
+    height: 100%;
+    padding: 0 24px;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.header__item {
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+}
+
+.header__links {
+    display: flex;
+    align-items: stretch;
+}
+
+a.header__link {
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    font-size: 18px;
+    color: #fff;
+}
+
+a.header__link:hover,
+a.header__link.active {
+    background-color: #fff;
+    color: var(--text);
+}
+
+.header__username-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.header__username {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.header__account-options {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 1;
+    margin-top: -10px;
+    width: max-content;
+    padding: 12px;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    display: none;
+}
+
+.header__username-container:hover .header__account-options {
+    display: block;
+}
+
+.header__account-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 4px;
+    color: var(--text);
+}
+
+.header__account-option:hover {
+    background-color: var(--primary);
+    color: #fff;
+}

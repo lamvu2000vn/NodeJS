@@ -1,0 +1,13 @@
+extends ../layouts/main-layout
+block title
+    title #{product.name}
+block content
+    .row
+        .col-6.mx-auto
+            .mb-3.form-floating
+                input.form-control(type="text" id="name" value=product.name disabled)
+                label(for="name") Product name
+            .mb-3.form-floating
+                input.form-control(type="number" id="price" value=product.price disabled)
+                label(for="price") Price
+            a(href="/") << Back

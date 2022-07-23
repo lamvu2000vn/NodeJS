@@ -1,20 +1,23 @@
 // Library
-const path = require('path')
 const express = require('express')
-const bodyParser = require('body-parser')
-
+// Util
+const { sequelize, associations } = require('./util')
+// Config
+const config = require('./config/config')
 // Routes
-const { authRoutes } = require('./routes')
+const { routes } = require('./routes')
 
 const app = express()
 
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(express.static(path.join(__dirname, 'public')))
+config(app)
+routes(app)
+associations()
 
-app.set('view engine', 'pug')
-app.set('views', 'views')
-
-app.use(authRoutes)
-app.use((req, res, next) => { res.render('404') })
-
-app.listen(3000)
+sequelize
+    .sync()
+    .then(() => {
+        app.listen(3000)
+    })
+    .catch(err => {
+        console.log(err)
+    })

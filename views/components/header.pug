@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 .header
     .header__container
         .header__item
@@ -7,3 +8,23 @@
             .header__username Admin
                 .header__account-options
                     a.account-options__item(href="/sign-out") Log out
+=======
+block styles
+    link(rel="stylesheet", href="/css/components/header.css")
+
+.header
+    .header__container
+        .header__item
+            .header__links
+                a.header__link(href="/") Home
+                a.header__link(href="/cart") Cart
+        .header__item
+            .header__username-container
+                .header__username
+                    span Admin
+                    i.fa-solid.fa-angle-down
+                .header__account-options
+                    a.header__account-option
+                        span Sign out
+                        i.fa-solid.fa-right-from-bracket
+>>>>>>> Stashed changes

@@ -1,0 +1,15 @@
+extends ../layouts/auth-layout
+block styles
+    link(rel="stylesheet", href="/css/pages/login.css")
+block content
+    .login
+        .login__container
+            .login__header Login
+            form(action="/login" method="POST")
+                .mb-3.form-floating
+                    input.form-control(type="text" id="username" name="username" placeholder="Enter username") 
+                    label(for="username") Username
+                .mb-3.form-floating
+                    input.form-control(type="password" id="password" name="password" placeholder="Enter password")
+                    label(for="password") Password
+                button.btn.btn-primary.w-100(type="submit") Login
