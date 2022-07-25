@@ -8,11 +8,15 @@ block styles
                 a.header__link(href="/") Home
                 a.header__link(href="/cart") Cart
         .header__item
-            .header__username-container
-                .header__username
-                    span Admin
-                    i.fa-solid.fa-angle-down
-                .header__account-options
-                    a.header__account-option
-                        span Sign out
-                        i.fa-solid.fa-right-from-bracket
+            if user
+                .header__username-container
+                    .header__username
+                        span #{user.full_name}
+                        i.fa-solid.fa-angle-down
+                    .header__account-options
+                        a.header__account-option(href="/logout")
+                            span Sign out
+                            i.fa-solid.fa-right-from-bracket
+            else
+                .header__login-btn
+                    a(href="/login") Login

@@ -2,8 +2,12 @@
 const express = require('express')
 // Controller
 const { cartController } = require('../controllers')
+// Middleware
+const { isAuthenticated } = require('../middlewares')
 
 const route = express.Router()
+
+route.use(isAuthenticated)
 
 route.get('/cart', cartController.index)
 

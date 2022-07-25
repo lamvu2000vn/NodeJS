@@ -4,7 +4,15 @@ const bcrypt = require('bcrypt')
 const { User } = require('../models')
 
 exports.getLogin = (req, res, next) => {
-    res.render('auth/login')
+    const isLogged = req.session.user
+
+    if (isLogged) {
+        res.redirect('/')
+    } else {
+        res.render('auth/login', {
+            errorMessage: req.flash('error') || null
+        })
+    }
 }
 
 exports.postLogin = async (req, res, next) => {
@@ -17,18 +25,26 @@ exports.postLogin = async (req, res, next) => {
     })
 
     if (!user) {
-        res.redirect('/login')
-        return
+        req.flash('error', 'Invalid username')
+        return res.redirect('/login')
     }
 
     const checkPassword = bcrypt.compareSync(password, user.password)
 
     if (!checkPassword) {
-        res.redirect('/login')
-        return
+        req.flash('error', 'Invalid password')
+        return res.redirect('/login')
     }
 
-    req.user = user
+    req.session.user = user
+
+    res.redirect('/')
+}
+
+exports.logout = (req, res, next) => {
+    req.session.destroy(err => {
+        console.log(err)
+    })
 
     res.redirect('/')
 }

@@ -7,7 +7,7 @@ const { Cart, CartItem } = require('../models')
 
 exports.index = async (req, res, next) => {
     let cart = []
-    const user = req.user
+    const user = req.session.user
     const userCart = await Cart.findOne({
         where: {
             user_id: user.id

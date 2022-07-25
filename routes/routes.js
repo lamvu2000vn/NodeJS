@@ -1,6 +1,4 @@
 // Library
-const express = require('express')
-const bodyParser = require('body-parser')
 const bcrypt = require('bcrypt')
 // Route
 const productRoutes = require('./productRoutes')
@@ -10,8 +8,6 @@ const authRoutes = require('./authRoutes')
 const { User } = require('../models')
 
 const routes = app => {
-    app.use(bodyParser.urlencoded({extended: false}))
-    app.use(express.static('public'))
     app.use(async (req, res, next) => {
         const [user, isCreated] = await User.findOrCreate({
             where: {
@@ -23,8 +19,6 @@ const routes = app => {
                 full_name: 'admin'
             }
         })
-
-        req.user = user
         
         next()
     })
