@@ -18,7 +18,8 @@ const config = app => {
     app.set('view engine', 'pug')
     app.set('views', 'views')
     app.use(express.static('public'))
-    app.use(bodyParser.urlencoded({extended: false}))
+    app.use(bodyParser.json())
+    app.use(bodyParser.urlencoded({extended: true}))
     app.use(session({
         secret: 'this is secret',
         resave: false,

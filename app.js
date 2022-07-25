@@ -9,9 +9,9 @@ const { routes } = require('./routes')
 
 const app = express()
 
+associations()
 config(app)
 routes(app)
-associations()
 
 sequelize
     .sync()

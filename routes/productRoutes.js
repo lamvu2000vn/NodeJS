@@ -7,13 +7,13 @@ const { isAuthenticated } = require('../middlewares')
 
 const route = express.Router()
 
-route.get('/', productController.index)
+route.get('/', isAuthenticated, productController.index)
 
 route.get('/add-product', isAuthenticated, productController.getAddProduct)
 
 route.post('/add-product', isAuthenticated, productController.postAddProduct)
 
-route.get('/product/:productID', productController.productDetails)
+route.get('/product/:productID', isAuthenticated, productController.productDetails)
 
 route.get('/update/:productID', isAuthenticated, productController.getUpdateProduct)
 

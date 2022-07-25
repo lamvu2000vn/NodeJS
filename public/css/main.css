@@ -1,6 +1,7 @@
 :root {
     --primary: rgb(214, 45, 45);
     --text: #333;
+    --gray-1: #eee;
 }
 
 * {

@@ -48,3 +48,23 @@ exports.logout = (req, res, next) => {
 
     res.redirect('/')
 }
+
+exports.getSignUp = (req, res, next) => {
+    res.render('auth/sign-up')
+}
+
+exports.checkExistsEmail = async (req, res, next) => {
+    const {email} = req.body
+
+    const exists = await User.findOne({
+        where: {
+            email
+        }
+    })
+
+    if (exists) {
+        res.status(200).json({
+            message: 'Email already exists'
+        })
+    }
+}

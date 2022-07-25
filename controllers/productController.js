@@ -68,7 +68,7 @@ exports.deleteProduct = async (req, res, next) => {
 
     if (result) {
         res.redirect('/')
-    } else [
+    } else {
         res.redirect('/404')
-    ]
+    }
 }

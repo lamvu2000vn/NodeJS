@@ -1,0 +1,39 @@
+extends ../layouts/auth-layout
+block title
+    title Sign up
+block styles
+    link(rel="stylesheet", href="/css/pages/auth.css")
+block content
+    .auth
+        .auth__container
+            .auth__header Sign up
+            if errorMessage
+                span= errorMessage
+            form(action="/sign-up" method="POST")
+                include ../components/inputs/csrf
+                input(type="text" hidden id="sign-up-step" value="1")
+                .sign-up-step-container(data-step="1")
+                    .mb-3
+                        include ../components/inputs/email
+                    .mb-3
+                        button.btn.btn-primary.w-100.next-step-btn(type="button") Continue
+                .sign-up-step-container(data-step="2")
+                    .mb-3
+                        input.verify-code-input(type="text" id="verify-code" name="verify-code" autofocus)
+                    .mb-3
+                        .text-center Enter the verification code sent to your email
+                    .mb-3
+                        button.btn.btn-primary.w-100.next-step-btn(type="button") Continue
+                .sign-up-step-container(data-step="3")
+                    .mb-3
+                        include ../components/inputs/password
+                    .mb-3
+                        include ../components/inputs/re-password
+                    .mb-3
+                        button.btn.btn-primary.w-100(type="submit") Sign up
+                .d-flex.align-items-center.gap-2
+                    span Have an account?
+                    a(href="/login") Login
+
+block scripts
+    script(src="/js/pages/sign-up.js")
