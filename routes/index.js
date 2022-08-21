@@ -1,5 +1,0 @@
-exports.productRoutes = require('./productRoutes')
-exports.cartRoutes = require('./cartRoutes')
-exports.authRoutes = require('./authRoutes')
-exports.errorRoutes = require('./errorRoutes')
-exports.routes = require('./routes')
